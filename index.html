@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IO Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/cssemoticons.css" />
+    <link rel="stylesheet" href="/css/emojipicker.css" />
+    <link rel="stylesheet" href="/css/emojipicker.tw.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/cssemoticons.js"></script>
+    <script src="/js/emojis.js"></script>
+    <script src="/js/emojipicker.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="userFormArea" class="row">
+            <div calss="col-md-12">
+                <form id="userForm">
+                    <div class="form-group">
+                        <strong class="errorMsg"></strong><br/>
+                        <label>Enter Username</label>
+                        <input type="text" class="form-control" id="username" />
+                        <br/>
+                        <input type="submit" class="btn btn-primary" value="Login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="messageArea" class="row">
+            <div class="col-md-4">
+                <div class="well">
+                    <h3>Online Users</h3>
+                    <ul class="list-group" id="users"></ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="chat" id="chat">
+
+                </div>
+                <div class="typing"></div>
+                <div style="color:green;" id="fileMsg"></div>
+                <form ref="uploadForm" id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="sampleFile" id="sampleFile" />
+                    <input type="submit" value="Upload!" />
+                </form>
+                <form id="messageForm">
+                    <div class="form-group">
+                        <strong class="errorMsg"></strong><br/>
+                        <label>Enter Message</label>
+                        <textarea class="form-control emojiable-option" id="message"></textarea>
+                        <br/>
+                        <a href="#" class="fileAttach"><img src="/images/attach.png" title="attachment" alt="attach.png" /></a>
+                    </div>
+                    <input type=" submit " class="btn btn-primary " value="Send message " id="messageFormSubmit" readonly/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/app.js "></script>
+</body>
+
+</html>
